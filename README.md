@@ -226,3 +226,63 @@ console.log(Dimensions.get("screen"));
 - React-native-community - hooks
 
 1. Install `npm install @react-native-community/hooks`
+
+### Flexbox
+
+```jsx
+export default function App() {
+  return (
+    <View style={{ backgroundColor: "#fff", flex: 1 }}>
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          flex: 2,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "gold",
+          flex: 1,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "tomato",
+          flex: 1,
+        }}
+      />
+    </View>
+  );
+}
+```
+
+### Flexbox- Direction
+
+- Primary Axis - `it is the horizontal axis`
+- Cross Axis - `it is the vertical axis`
+
+**FlexDirection** in react native pre default flex direct in `column`
+
+```ts
+<View
+  style={{
+    backgroundColor: "#fff",
+    flex: 1,
+    flexDirection: "row",
+  }}
+/>
+```
+
+### Flexbox- justifyContent, alignItems and alignSelf
+
+```ts
+<View
+  style={{
+    backgroundColor: "#fff",
+    flex: 1,
+    flexDirection: "row", //horizontal
+    justifyContent: "center", // main
+    alignItems: "center", // secondary
+  }}
+/>
+```
