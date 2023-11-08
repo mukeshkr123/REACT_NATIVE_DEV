@@ -196,3 +196,33 @@ const styles = StyleSheet.create({
   },
 });
 ```
+
+### Platform specific code
+
+-React Native provides a module that detects the platform in which the app is running.
+
+```tsx
+import { Platform, StyleSheet } from "react-native";
+
+const styles = StyleSheet.create({
+  height: Platform.OS === "ios" ? 200 : 100,
+});
+```
+
+## Layout
+
+### Dimensions
+
+-Density-independent Pixels  
+--> Physical pixels = `DIPS x Scale Factor`
+
+```jsx
+import { Dimensions } from "react-native";
+console.log(Dimensions.get("screen"));
+```
+
+### Detecting Orientation Changes
+
+- React-native-community - hooks
+
+1. Install `npm install @react-native-community/hooks`
