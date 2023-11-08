@@ -1,20 +1,65 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  SafeAreaView,
+  TouchableWithoutFeedback,
+  Button,
+  Alert,
+} from "react-native";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <SafeAreaView style={styles.container}>
+      {/* Text Component with onPress */}
+      <View>
+        <Text numberOfLines={1} onPress={() => console.log("Text clicked")}>
+          Hello React Native
+        </Text>
+      </View>
+
+      {/* Local Image Component */}
+      <Image
+        source={require("./assets/icon.png")} // Replace with your image path
+        style={styles.image}
+      />
+
+      {/* Touchable View */}
+      <TouchableWithoutFeedback onPress={() => alert("Pressed!")}>
+        <View style={styles.touchableView}>
+          <Text>Touchable View</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      {/* Button Component with Alert Prompt */}
+      <Button
+        title="Learn More"
+        onPress={() =>
+          Alert.prompt("My title", "My message...", (text) => console.log(text))
+        }
+      />
+
+      {/* StatusBar Component */}
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "dodgerblue",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  image: {
+    width: 200,
+    height: 200,
+  },
+  touchableView: {
+    backgroundColor: "lightcoral",
+    padding: 10,
   },
 });
