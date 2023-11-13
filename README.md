@@ -518,3 +518,65 @@ const App = () => {
 
 export default App;
 ```
+
+### Platform-specific Code
+
+## Import the Platform Module
+
+```jsx
+import { Platform } from "react-native";
+```
+
+## Write Platform-Specific Code
+
+Use `Platform.OS` to conditionally execute code based on the current platform.
+
+```jsx
+if (Platform.OS === "ios") {
+  // Code specific to iOS
+} else if (Platform.OS === "android") {
+  // Code specific to Android
+}
+```
+
+For instance, you can customize styles or behavior:
+
+```jsx
+import { Platform, StyleSheet } from "react-native";
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 20,
+    ...Platform.select({
+      ios: {
+        backgroundColor: "lightgray",
+      },
+      android: {
+        backgroundColor: "lightblue",
+      },
+    }),
+  },
+});
+```
+
+## Platform-Specific Extensions
+
+You can create files with platform-specific extensions, such as `MyComponent.ios.js` or `MyComponent.android.js`. The appropriate file is automatically chosen based on the platform.
+
+```jsx
+// MyComponent.js
+
+import { Platform, Text } from "react-native";
+
+const MyComponent = () => {
+  return (
+    <Text>
+      This is common code.
+      {Platform.OS === "ios" && <Text> This is specific to iOS.</Text>}
+      {Platform.OS === "android" && <Text> This is specific to Android.</Text>}
+    </Text>
+  );
+};
+
+export default MyComponent;
+```
