@@ -1,19 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import AppButton from "./app/components/Button";
+import MessagesScreen from "./app/screens/MessagesScreen";
 
 export default function App() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <AppButton title="Login" onPress={() => console.log("Tapped")} />
-    </View>
-  );
+  return <MessagesScreen />;
 }
 
 const styles = StyleSheet.create({});
