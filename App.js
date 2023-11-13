@@ -1,20 +1,14 @@
 import React from "react";
-import { View } from "react-native";
-import AppText from "./app/components/AppText";
+import { View, Text } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
-export default function App() {
+const App = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <AppText>
-        I Love React Native! I love React Native! I love React Native! I love
-        React Native! Here some more text
-      </AppText>
+    <View>
+      <Text>Hello, this is an icon: </Text>
+      <Ionicons name="rocket" size={30} color="#900" />
     </View>
   );
-}
+};
+
+export default App;
