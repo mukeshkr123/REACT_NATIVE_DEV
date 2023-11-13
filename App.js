@@ -10,32 +10,21 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <View
+      <Text
         style={{
-          backgroundColor: "dodgerblue",
-          width: 100,
-          height: 100,
-          shadowColor: "grey",
-          shadowOffset: {
-            width: -10,
-            height: 10,
-          },
-          shadowOpacity: 1,
-          shadowRadius: 10,
-          elevation: 20,
-          padding: 20,
-          paddingHorizontal: 10,
-          paddingLeft: 30,
+          fontSize: 30,
+          fontFamily: "Roboto",
+          fontStyle: "italic",
+          fontWeight: "600",
+          color: "tomato",
+          textTransform: "capitalize",
+          textAlign: "center",
+          lineHeight: 30,
         }}
       >
-        <View
-          style={{
-            backgroundColor: "gold",
-            width: 40,
-            height: 40,
-          }}
-        ></View>
-      </View>
+        I Love React Native! I love React Native! I love React Native! I love
+        React Native! Here some more text
+      </Text>
     </View>
   );
 }

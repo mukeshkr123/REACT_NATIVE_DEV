@@ -429,3 +429,24 @@ Elevate your components by adding shadows for a polished look and improved user 
     {/* Your component's content */}
   </View>
   ```
+
+## Styling Text
+
+```jsx
+<Text
+  style={{
+    fontSize: 18,
+    color: "blue",
+    fontWeight: "bold",
+    textAlign: "center",
+  }}
+>
+  This is styled text.
+</Text>
+```
+
+- Adjust `fontSize`, `color`, `fontWeight`, and `textAlign` for basic styling.
+- Specify `fontFamily` for custom font usage.
+- Add text decoration with `textDecorationLine`.
+- Set line height using `lineHeight`.
+- Apply text shadow using `textShadowColor`, `textShadowOffset`, and `textShadowRadius`.
