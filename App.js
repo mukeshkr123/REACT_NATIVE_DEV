@@ -1,8 +1,8 @@
+import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { View } from "react-native";
-import AppText from "./app/components/AppText";
+import AppButton from "./app/components/Button";
 
-const App = () => {
+export default function App() {
   return (
     <View
       style={{
@@ -11,9 +11,9 @@ const App = () => {
         alignItems: "center",
       }}
     >
-      <AppText> Hello world</AppText>
+      <AppButton title="Login" onPress={() => console.log("Tapped")} />
     </View>
   );
-};
+}
 
-export default App;
+const styles = StyleSheet.create({});
