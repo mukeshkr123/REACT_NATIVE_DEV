@@ -330,3 +330,54 @@ export default function App() {
   );
 }
 ```
+
+## Styling
+
+### Borders
+
+To add borders to components in React Native, use the `style` prop with properties like `borderWidth`, `borderColor`, and `borderStyle`. Here's a quick guide:
+
+### 1. Using Style Prop:
+
+```jsx
+<View
+  style={{
+    borderWidth: 1,
+    borderColor: "black",
+    borderStyle: "solid",
+  }}
+>
+  {/* Your component's content */}
+</View>
+```
+
+### 2. Shorthand Border Property:
+
+```jsx
+<View
+  style={{
+    border: "1px solid black",
+  }}
+>
+  {/* Your component's content */}
+</View>
+```
+
+### 3. Individual Border Sides:
+
+```jsx
+<View
+  style={{
+    borderTopWidth: 1,
+    borderTopColor: "black",
+    borderBottomWidth: 2,
+    borderBottomColor: "red",
+    borderLeftWidth: 1,
+    borderLeftColor: "green",
+    borderRightWidth: 3,
+    borderRightColor: "blue",
+  }}
+>
+  {/* Your component's content */}
+</View>
+```
