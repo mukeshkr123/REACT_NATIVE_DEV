@@ -580,3 +580,133 @@ const MyComponent = () => {
 
 export default MyComponent;
 ```
+
+# Organizing Styles in React Native
+
+## 1. Inline Styles
+
+```jsx
+<View style={{ backgroundColor: "lightblue", padding: 10 }}>
+  <Text style={{ fontSize: 16, color: "black" }}>Inline Styles</Text>
+</View>
+```
+
+While suitable for small components, avoid inline styles for larger projects to maintain readability.
+
+## 2. StyleSheet Object
+
+Create a `StyleSheet` object to define styles in a separate file, promoting better organization and code reuse.
+
+```jsx
+// styles.js
+import { StyleSheet } from "react-native";
+
+const commonStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text: {
+    fontSize: 16,
+    color: "black",
+  },
+});
+
+export default commonStyles;
+```
+
+```jsx
+// YourComponent.js
+import React from "react";
+import { View, Text } from "react-native";
+import commonStyles from "./styles";
+
+const YourComponent = () => {
+  return (
+    <View style={commonStyles.container}>
+      <Text style={commonStyles.text}>Styled Text</Text>
+    </View>
+  );
+};
+
+export default YourComponent;
+```
+
+## 3. Separate Files for Each Component
+
+Organize styles by creating separate style files for each component, making it easy to locate and manage styles for specific components.
+
+```jsx
+// YourComponentStyles.js
+import { StyleSheet } from "react-native";
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text: {
+    fontSize: 16,
+    color: "black",
+  },
+});
+
+export default styles;
+```
+
+```jsx
+// YourComponent.js
+import React from "react";
+import { View, Text } from "react-native";
+import styles from "./YourComponentStyles";
+
+const YourComponent = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Styled Text</Text>
+    </View>
+  );
+};
+
+export default YourComponent;
+```
+
+## 4. Theme and Variants
+
+Create a theme object to store common styles and variants for different scenarios, such as light and dark themes.
+
+```jsx
+// theme.js
+export const lightTheme = {
+  backgroundColor: "white",
+  textColor: "black",
+};
+
+export const darkTheme = {
+  backgroundColor: "black",
+  textColor: "white",
+};
+```
+
+Apply styles based on the theme or variant.
+
+```jsx
+// YourComponent.js
+import React from "react";
+import { View, Text } from "react-native";
+import { lightTheme } from "./theme";
+
+const YourComponent = () => {
+  return (
+    <View style={{ ...lightTheme, padding: 10 }}>
+      <Text style={{ fontSize: 16, color: lightTheme.textColor }}>
+        Styled Text
+      </Text>
+    </View>
+  );
+};
+
+export default YourComponent;
+```
