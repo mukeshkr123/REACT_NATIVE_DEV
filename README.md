@@ -386,8 +386,6 @@ To add borders to components in React Native, use the `style` prop with properti
 
 Elevate your components by adding shadows for a polished look and improved user interface. Use the `style` prop to apply shadows with properties such as `shadowColor`, `shadowOffset`, `shadowOpacity`, `shadowRadius` (iOS), and `elevation` (Android).
 
-### Example:
-
 ```jsx
 <View
   style={{
@@ -430,7 +428,7 @@ Elevate your components by adding shadows for a polished look and improved user 
   </View>
   ```
 
-## Styling Text
+### Styling Text
 
 ```jsx
 <Text
@@ -450,3 +448,52 @@ Elevate your components by adding shadows for a polished look and improved user 
 - Add text decoration with `textDecorationLine`.
 - Set line height using `lineHeight`.
 - Apply text shadow using `textShadowColor`, `textShadowOffset`, and `textShadowRadius`.
+
+### Encapsulating Styles
+
+- In React Native, encapsulating styles for text involves creating reusable and organized style definitions for text components. This practice enhances maintainability and allows for consistent styling across your application. Encapsulating styles can be achieved using various methods, such as using inline styles, creating separate style objects, or leveraging external stylesheets.
+
+**For Text**
+
+1. Create a separate `AppText` component
+
+```jsx
+import React from "react";
+import { Text, StyleSheet, Platform } from "react-native";
+
+export default function AppText({ children }) {
+  return <Text style={styles.text}>{children}</Text>;
+}
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 18,
+    fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
+  },
+});
+```
+
+2. use this in any component
+
+```jsx
+import React from "react";
+import { View } from "react-native";
+import AppText from "./app/components/AppText";
+
+export default function App() {
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <AppText>
+        I Love React Native! I love React Native! I love React Native! I love
+        React Native! Here some more text
+      </AppText>
+    </View>
+  );
+}
+```
